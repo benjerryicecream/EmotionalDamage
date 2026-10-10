@@ -1,0 +1,131 @@
+{
+  "arms": {
+    "Prompt A (Direct)": {
+      "n_valid": 20,
+      "power_w_mean": 22.78493090308179,
+      "power_w_sd": 1.5654167946179973,
+      "duration_s_mean": 6.669394754998211,
+      "duration_s_sd": 0.4055015283246179,
+      "energy_j_mean": 151.51124338218074,
+      "energy_j_sd": 7.231697147910355,
+      "jpt_mean": 1.538060824274012,
+      "jpt_sd": 0.07042159777379878,
+      "jpt_cv_pct": 4.578596415849733,
+      "jpt_ci95": [
+        1.507197198251565,
+        1.5689244502964588
+      ],
+      "tokens_mean": 98.55,
+      "tokens_min": 90,
+      "tokens_max": 100,
+      "tokens_sd": 3.2032056312059445,
+      "surprisal_mean": 0.3050552599132061,
+      "temp_end_c_mean": 59.6,
+      "tokens_per_second_mean": 14.806804795895602,
+      "prompt_tokens": 47,
+      "raw_r_surprisal_jpt": {
+        "r": -0.10294690342892988,
+        "p": 0.6658149315644029,
+        "n": 20
+      },
+      "partial_r_surprisal_jpt_given_tokens": {
+        "r": -0.16668072855222468,
+        "p": 0.49522918802880556,
+        "n": 20,
+        "dof": 17
+      }
+    },
+    "Prompt B (Complex/Stress)": {
+      "n_valid": 20,
+      "power_w_mean": 25.755918154463473,
+      "power_w_sd": 1.1910055665708088,
+      "duration_s_mean": 6.001161094999406,
+      "duration_s_sd": 0.48835326836964893,
+      "energy_j_mean": 154.5308423003446,
+      "energy_j_sd": 13.725036047543147,
+      "jpt_mean": 1.5781862110960119,
+      "jpt_sd": 0.05891437605350694,
+      "jpt_cv_pct": 3.733043391159294,
+      "jpt_ci95": [
+        1.5523658473533168,
+        1.604006574838707
+      ],
+      "tokens_mean": 97.8,
+      "tokens_min": 75,
+      "tokens_max": 100,
+      "tokens_sd": 6.574272022937517,
+      "surprisal_mean": 0.4197209671139717,
+      "temp_end_c_mean": 61.0,
+      "tokens_per_second_mean": 16.325808640180828,
+      "prompt_tokens": 58,
+      "raw_r_surprisal_jpt": {
+        "r": 0.21689137489895638,
+        "p": 0.35835052193170724,
+        "n": 20
+      },
+      "partial_r_surprisal_jpt_given_tokens": {
+        "r": -0.10529011175999167,
+        "p": 0.6679325088185515,
+        "n": 20,
+        "dof": 17
+      }
+    }
+  },
+  "comparison": {
+    "a": "Prompt A (Direct)",
+    "b": "Prompt B (Complex/Stress)",
+    "jpt_diff_mean": -0.04012538682199995,
+    "jpt_pct_diff": -2.542500152382769,
+    "duration_pct_diff": 11.135072853745328,
+    "tokens_diff_mean": 0.75
+  },
+  "welch_t_jpt": {
+    "t": -1.9544192630406458,
+    "dof": 36.85140298931206,
+    "p": 0.05827117444067088,
+    "n_a": 20,
+    "n_b": 20
+  },
+  "welch_t_energy": {
+    "t": -0.8704616025942964,
+    "dof": 28.794710303084,
+    "p": 0.3912473961145898,
+    "n_a": 20,
+    "n_b": 20
+  },
+  "welch_t_power": {
+    "t": -6.754840120021171,
+    "dof": 35.475827971407696,
+    "p": 7.419651380918779e-08,
+    "n_a": 20,
+    "n_b": 20
+  },
+  "effect_size": {
+    "cohens_d_pooled_jpt": -0.6180416374116181,
+    "hedges_g_jpt": -0.6057626644829105,
+    "glass_delta_jpt": -0.6810797212815674
+  },
+  "significant_jpt": false,
+  "significant_energy": false,
+  "warnings": [
+    "Attended prompt lengths differ by 11 tokens; masked padding does not equalize prefill work. Prefill cost is not controlled in this run.",
+    "Active power differs but total energy does not \u2014 consistent with the arms producing different numbers of tokens over different runtimes."
+  ],
+  "run": {
+    "seed": 42,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "quantized": true,
+    "max_new_tokens": 100,
+    "target_trials_per_arm": 20,
+    "attempts": 40,
+    "equalize_prefill_tokens": false,
+    "cooldown_s": 3.0,
+    "idle_seconds": 1.5,
+    "attention_masked_padding": true,
+    "prompt_tokens": {
+      "Prompt A (Direct)": 47,
+      "Prompt B (Complex/Stress)": 58
+    }
+  }
+}
